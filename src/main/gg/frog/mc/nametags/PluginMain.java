@@ -31,6 +31,7 @@ public class PluginMain extends PluginBase {
 
 	@Override
 	public void onEnable() {
+		pm = this;
 		cm = new ConfigManager(pm);
 		getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "==============================="));
 		getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX));
@@ -86,11 +87,6 @@ public class PluginMain extends PluginBase {
 
 	public ConfigManager getConfigManager() {
 		return cm;
-	}
-
-	@Override
-	public void onLoad() {
-		pm = this;
 	}
 
 	private boolean checkPluginDepends() {
