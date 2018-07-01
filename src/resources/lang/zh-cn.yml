@@ -1,0 +1,15 @@
+tagInventoryName: '&4===称号仓库==='
+tagColorItemName: '&6&l昵称效果'
+tagPrefixItemName: '&6&l昵称前缀'
+tagSuffixItemName: '&6&l昵称后缀'
+msg:
+  parameterMismatch: '&4参数不匹配.'
+  processing: '&2执行中，请等待...'
+  noTagData: '&4暂时无称号包.'
+  nopermission: '&4你没有权限这么做.'
+  configReloaded: '&2配置重载完成.'
+  tagSetSuccess: '&2称号设置成功.'
+cmd:
+  help: '&6/{0} help \n&7  - 显示所有命令.'
+  view: '&6/{0} tag <c/p/s>\n&7  - 设置你的昵称颜色/称号前缀/称号后缀.'
+  reload: '&6/{0} reload \n&7  - 重新加载插件配置.'

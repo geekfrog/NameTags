@@ -1,0 +1,86 @@
+# 默认昵称样式.
+# Default Name Color.
+defaultNamecolor: '&6'
+# 默认前缀.
+# Default Prefix.
+defaultPrefix: '&3[player]'
+# 默认后缀.
+# Default Suffix.
+defaultSuffix: ''
+# 如果你有其他的插件来修改玩家的displayname, 请禁用此项或禁止其他插件修改. 比如Essentials插件.
+# 如果安装了PlaceholderAPI 可以使用
+#  %pttag_fullname% %pttag_prefix% %pttag_suffix% 来显示displayname prefix+color suffix
+# If you have other plugin, to modifies player displayname, please disable this.
+changeDisplayname: true
+# 使用HolographicDisplays显示称号. 称号可以更长,不会被省略.
+# use HolographicDisplays to show Tags. The Tag can be more than 16 char
+useHdPlugin: false
+# 如果使用了HD, 是否一行显示
+# One line display the name and tags.
+oneLineDisplay: true
+# 称号刷新周期(秒). 
+# 如果你你的称号使用了PlaceholderAPI请设置此项
+# 推荐600秒以上.  设置-1则禁用刷新.
+# Title refresh cycle (seconds). 
+# If you use Placeholder, please set. 
+# Recommend more than 600s. Set -1 to disable refresh.
+refreshTagTime: -1
+template:
+  lore:
+  - '&1-----------------'
+  - '&2Preview:'
+  - '&3    %displayname%'
+  - '&4-----------------'
+  - '&5    %description%'
+  - '&6-----------------'
+packages:
+# 称号包名称.
+# Tag package name.
+  default:
+    description: '&4The default tag.'
+    permissions: ''
+    namecolor:
+    - '&6'
+    prefix:
+    - '&3[player]'
+  example1:
+    # 称号包描述,可以填写如何获得这些称号.
+    # Tag package describes. You can type how to get these tag.
+    description: '&4Tag package description.'
+    # 称号包所需权限. 不需要权限请留空,输入 ''
+    # Tag package needs permission. Keep null to make no permission.
+    permissions: ''
+    # 称号包所含的昵称样式.
+    # Name Colors.
+    namecolor:
+    - '&3'
+    - '&4:SKULL_ITEM:5'
+    - '&5:SKULL_ITEM:MHF_Present1'
+    # 称号包所含的昵称前缀.
+    # Name prefix.
+    prefix:
+    - '&3[prefix]'
+    - '&4[prefix]:1'
+    # 称号包所含的昵称后缀.
+    # Name suffix.
+    suffix:
+    - '&3[suffix]'
+    - '&4[suffix]:1:6'
+  vip:
+    description: '&4VIP Tags.'
+    permissions: 'player.vip'
+    namecolor:
+    - '&3&l'
+    - '&4&n:SKULL_ITEM:5'
+    - '&5&o:SKULL_ITEM:MHF_Present1'
+    # 称号包所含的昵称前缀.
+    # Name prefix.
+    prefix:
+    - '&3&l[prefix]'
+    - '&4&n[prefix]:1'
+    # 称号包所含的昵称后缀.
+    # Name suffix.
+    suffix:
+    - '&3&o[suffix]'
+    - '&4&l&n[suffix]:1:6'
+    

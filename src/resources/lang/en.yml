@@ -1,0 +1,15 @@
+tagInventoryName: '&4===Tag Packages==='
+tagColorItemName: '&6&lName Style'
+tagPrefixItemName: '&6&lTag Prefix'
+tagSuffixItemName: '&6&lTag Suffix'
+msg:
+  parameterMismatch: '&4Parameter mismatch.'
+  processing: '&2Please wait for processing...'
+  noTagData: '&4No data for tag packages.'
+  nopermission: '&4You do not have permission to do this.'
+  configReloaded: '&2Configuration reload is complete.'
+  tagSetSuccess: '&2Tag Set Success.'
+cmd:
+  help: '&6/{0} help \n&7  - Show commands.'
+  view: '&6/{0} tag <c/p/s>\n&7  - Set your color/prefix/suffix of tags.'
+  reload: '&6/{0} reload \n&7  - Reloads the config file.'

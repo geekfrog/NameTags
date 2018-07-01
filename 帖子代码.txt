@@ -1,0 +1,366 @@
+[align=center][font=微软雅黑][table=95%]
+[tr=black][td][align=center][img=400,50]https://i.loli.net/2017/07/18/596cdf5e63a20.png[/img][b][size=4][color=#ffffff]—NameTags [/color][/size][/b][size=4][color=#ffffff][b]权限限时[/b][/color][/size][/align]
+[align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]唠叨[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td]
+[align=center][size=4][color=#ffa500][b]这是本人第二个发布的插件, 希望能让大家满意！[/b][/color][/size][/align]
+[align=center][size=4][color=#dda0dd][b]本插件需要JAVA8！！！[/b][/color][/size][/align][align=center]
+[size=4][color=#98fb98][b]下载地址在最下面！[/b][/color][/size][/align]
+[align=center][size=4][color=#c0c0c0][b]最新版本: [/b][/color][b][color=#8b0000]0.4.3[/color][color=#c0c0c0]，推荐大家使用新版本，只需替换插件的jar包和语言文件即可! [/color][/b][/size][/align]
+[align=center][size=4][b][color=#c0c0c0]请对比原配置, 查看新版本是否增加了新的配置项![/color][/b][/size][/align]
+[/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]前言[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][size=4][color=#ffffff][spoiler]打算配合我的限时权限插件给予玩家对应权限的称号, 但是论坛里没找到满足我需求的, 所以做了这个插件[/spoiler][/color][/size][align=center][b][size=4][color=#9932cc][font=微软雅黑]配合点券商店购买对应权限, 即可显示你的专有称号![/font][/color][/size][/b][size=4]
+[b][size=4][color=#ffffff][font=微软雅黑]本插件支持 1.7.10-1.12 大部分服务器, 1.9以下[/font][/color][/size][/b][/size][b][size=4][color=#ffffff][font=微软雅黑]的[/font][/color][/size][/b][b][size=4][color=#ffffff][font=微软雅黑]服务端可能需要把中文配置进行转码。[/font][/color][/size][/b][/align][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]功能/特性[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][size=4][color=#ffffff][b][list]
+[*]基于权限的称号插件
+[*]可随时切换要显示的称号
+[*]GUI同时显示可用称号及不可用称号.
+[*]支持UUID
+[*]权限包到期可执行自定义命令(支持[url=https://www.spigotmc.org/resources/placeholderapi.6245/]PlaceholderApi[/url]变量)
+[*]等等...
+[/list][/b][/color][/size][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]插件展示[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][size=4][color=#ffffff][b][list]
+[*]支持Placeholder变量、HolographicDisplays显示称号(解决称号长度限制问题)
+[*]可以设置称号功能开关、默认称号、是否 修改displayname、是否使用HolographicDisplays、以及称号刷新时间(使用Placeholder变量的话)
+[*]自带Placeholder变量: %pttag_fullname% %pttag_prefix% %pttag_suffix% 来显示displayname、prefix+color、suffix
+[/list][/b][/color][/size][/td][/tr]
+[tr][td][spoiler][attachimg]1214151[/attachimg][attachimg]1214150[/attachimg]
+[attachimg]1214146[/attachimg][attachimg]1214145[/attachimg]
+[attachimg]1214147[/attachimg][attachimg]1214148[/attachimg][attachimg]1214149[/attachimg]
+[/spoiler][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]权限[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][spoiler][b][table=98%]
+[tr=#dda0dd][td]权限[/td][td]用途[/td][td]默认权限归属[/td][/tr]
+[tr=#f5deb3][td]permissionstime.*[/td][td]插件的全部权限.[/td][td]op默认拥有.[/td][/tr]
+[tr=#fffacd][td]permissionstime.me[/td][td]查看你自己拥有的权限包.[/td][td]玩家默认拥有.[/td][/tr]
+[tr=#fffacd][td]permissionstime.tag[/td][td]设置你自己拥有的称号.[/td][td]玩家默认拥有.[/td][/tr]
+[tr=#f5deb3][td]permissionstime.packages[/td][td]查看服务器拥有权限包的权限.[/td][td]op默认拥有.[/td][/tr]
+[tr=#fffacd][td]permissionstime.get[/td][td]查看玩家拥有的权限包.[/td][td]op默认拥有.[/td][/tr]
+[tr=#f5deb3][td]permissionstime.give[/td][td]给予玩家权限包使用时间的权限.[/td][td]op默认拥有.[/td][/tr]
+[tr=#fffacd][td]permissionstime.set[/td][td]重置玩家权限包使用时间的权限.[/td][td]op默认拥有.[/td][/tr]
+[tr=#f5deb3][td]permissionstime.remove[/td][td]删除玩家的某个权限包的权限.[/td][td]op默认拥有.[/td][/tr]
+[tr=#fffacd][td]permissionstime.removeall[/td][td]删除玩家的所有权限包的权限.[/td][td]op默认拥有.[/td][/tr]
+[tr=#f5deb3][td]permissionstime.reload[/td][td]重载配置的权限.[/td][td]op默认拥有.[/td][/tr]
+[/table][/b][/spoiler][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]命令[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][size=4][color=#98fb98][b]好多人都说命令太长, 其实是[color=#9932cc]有别名[/color]的, 请使用 [size=5][color=#ff0000]/pt[/color][/size][/b][/color][/size]
+[spoiler][b][table=98%]
+[tr=#dda0dd][td]命令[/td][td]用途[/td][/tr]
+[tr=#f5deb3][td][i]/permissionstime[/i][/td][td]查看全部命令[/td][/tr]
+[tr=#fffacd][td][i]/permissionstime me[/i][/td][td]查看你自己拥有的权限包.[/td][/tr]
+[tr=#fffacd][td][i]/permissionstime tag [c/p/s][/i][/td][td]设置你的昵称颜色/称号前缀/称号后缀.[/td][/tr]
+[tr=#f5deb3][td][i]/permissionstime packages [权限包名][/i][/td][td]查看服务器拥有的权限包(输入第二个参数可以查看该权限包的详细信息).[/td][/tr]
+[tr=#fffacd][td][i]/permissionstime get<玩家名>[/i][/td][td]查看玩家拥有的权限包.[/td][/tr]
+[tr=#f5deb3][td][i]/permissionstime give <玩家> <权限包名> <时间> <单位:d或h或m>[/i][/td][td]给玩家某个权限包一定时间的使用时间. 时间单位: d=天, h=小时, m=分钟[/td][/tr]
+[tr=#fffacd][td][i]/permissionstime set <玩家> <权限包名> <时间> <单位:d或h或m>[/i][/td][td]重置玩家某个权限包一定时间的使用时间. 时间单位: d=天, h=小时, m=分钟[/td][/tr]
+[tr=#f5deb3][td][i]/permissionstime remove <玩家名> <权限包名> [是否删除跨服权限 是:t 否:f][/i][/td][td]删除玩家的某个权限包.[/td][/tr]
+[tr=#fffacd][td][i]/permissionstime removeall <玩家名> [是否删除跨服权限 是:t 否:f][/i][/td][td]删除玩家的所有权限包.[/td][/tr]
+[tr=#f5deb3][td][i]/permissionstime reload[/i][/td][td]重载配置.[/td][/tr]
+[/table][/b][/spoiler][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]插件配置[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][spoiler][color=#ffffff]
+config.yml
+[code]
+# 插件前缀.
+# Plugin prefix.
+pluginPrefix: '&4[&bPermissions Time&4] '
+# 是否开启DEBUG模式.
+# Whether to open the DEBUG mode.
+debug: false
+# 是否同意插件上传统计信息.
+# Whether or not you agree with the plugin to upload statistics.
+metrics: true
+# 开启称号系统.
+# Use prefix system.
+tagSystem: false
+# 语言文件名称 在'lang'文件夹内.
+# Language file name.
+lang: zh-cn
+# 数据库相关.
+# Database settings.
+mysql:
+  # 是否使用MySQL数据库.
+  # Use the MySQL database?
+  enable: false
+  # 服务器唯一标识, 用来区分权限是哪个服务器的.
+  # 想要权限跨服,serverId必须一致.
+  # Server ID.
+  serverId: default
+  hostname: localhost
+  port: 3306
+  database: minecraft
+  username: user
+  password: '123456'
+  # 数据库表前缀
+  # Database table prefix.
+  tablePrefix: pt_[/code]
+packages.yml
+[code]
+# 配置文件版本.
+# Config version.
+version: 1.00
+# 默认权限组.
+# Default permission group.
+defaultGroup: Default
+packages:
+# 权限包名称.
+# Permission package name.
+  example1:
+    # 权限包显示名称.
+    # Permission package display name.
+    displayName: '&4Test Package'
+    # 显示的物品类型.
+    # 可以使用id, 但不可与type同时使用.
+    # 可以定义物品的种类, 特殊的如头颅可以指定哪个玩家的头颅.
+    # Show the type of item.
+    # You can use 'id', but you can't use 'type' at the same time.
+    # You can define the type of item, such as skull can set which player's head.
+    #id: 397
+    #type: SKULL_ITEM:5
+    #type: SKULL_ITEM:MHF_Present1
+    type: NETHER_STAR
+    # 是否有附魔发光的特效
+    glowing: false
+    # 标签.
+    # Lores.
+    lores: 
+    - '&2This is a test lore.'
+    # 是否跨服权限?
+    # Is multiple server permission?
+    global: false
+    # 权限包含有的权限 world1、world2、world3是赋值给玩家permission2权限的世界.
+    # 如果所有世界都赋值权限则不用注明世界名称如：permission1.
+    # Package contain permissions.
+    # Add ':world1' at the end can restrict permissions used in 'world1'.
+    permissions:
+    - permission1 
+    - permission2:world1:world2:world3
+    # 权限包含有的权限组.
+    # Package contain groups.
+    groups:
+    - group1
+    - group2:world1
+    # 权限包过期后执行的控制台命令
+    # Package expire console commands.
+    expireCommands:
+    - 'say %player% 的权限包到期了.'
+    - 'say 请及时续期.'
+
+[/code]tagNames.yml
+[code]
+# 默认昵称样式.
+# Default Name Color.
+defaultNamecolor: '&6'
+# 默认前缀.
+# Default Prefix.
+defaultPrefix: '&3[player]'
+# 默认后缀.
+# Default Suffix.
+defaultSuffix: ''
+# 如果你有其他的插件来修改玩家的displayname, 请禁用此项或禁止其他插件修改. 比如Essentials插件.
+# 如果安装了PlaceholderAPI 可以使用
+#  %pttag_fullname% %pttag_prefix% %pttag_suffix% 来显示displayname prefix+color suffix
+# If you have other plugin, to modifies player displayname, please disable this.
+changeDisplayname: true
+# 使用HolographicDisplays显示称号. 称号可以更长,不会被省略.
+# use HolographicDisplays to show Tags. The Tag can be more than 16 char
+useHdPlugin: false
+# 如果使用了HD, 是否一行显示
+# One line display the name and tags.
+oneLineDisplay: true
+# 称号刷新周期(秒). 
+# 如果你你的称号使用了PlaceholderAPI请设置此项
+# 推荐600秒以上.  设置-1则禁用刷新.
+# Title refresh cycle (seconds). 
+# If you use Placeholder, please set. 
+# Recommend more than 600s. Set -1 to disable refresh.
+refreshTagTime: -1
+template:
+  lore:
+  - '&1-----------------'
+  - '&2Preview:'
+  - '&3    %displayname%'
+  - '&4-----------------'
+  - '&5    %description%'
+  - '&6-----------------'
+packages:
+# 称号包名称.
+# Tag package name.
+  default:
+    description: '&4The default tag.'
+    permissions: ''
+    namecolor:
+    - '&6'
+    prefix:
+    - '&3[player]'
+  example1:
+    # 称号包描述,可以填写如何获得这些称号.
+    # Tag package describes. You can type how to get these tag.
+    description: '&4Tag package description.'
+    # 称号包所需权限. 不需要权限请留空,输入 ''
+    # Tag package needs permission. Keep null to make no permission.
+    permissions: ''
+    # 称号包所含的昵称样式.
+    # Name Colors.
+    namecolor:
+    - '&3'
+    - '&4:SKULL_ITEM:5'
+    - '&5:SKULL_ITEM:MHF_Present1'
+    # 称号包所含的昵称前缀.
+    # Name prefix.
+    prefix:
+    - '&3[prefix]'
+    - '&4[prefix]:1'
+    # 称号包所含的昵称后缀.
+    # Name suffix.
+    suffix:
+    - '&3[suffix]'
+    - '&4[suffix]:1:6'
+  vip:
+    description: '&4VIP Tags.'
+    permissions: 'player.vip'
+    namecolor:
+    - '&3&l'
+    - '&4&n:SKULL_ITEM:5'
+    - '&5&o:SKULL_ITEM:MHF_Present1'
+    # 称号包所含的昵称前缀.
+    # Name prefix.
+    prefix:
+    - '&3&l[prefix]'
+    - '&4&n[prefix]:1'
+    # 称号包所含的昵称后缀.
+    # Name suffix.
+    suffix:
+    - '&3&o[suffix]'
+    - '&4&l&n[suffix]:1:6'
+    [/code]
+[font=-apple-system, BlinkMacSystemFont,][color=#000000]简体中文 zh-cn.yml[/color][/font][code]
+inventoryName: '&4===权限仓库==='
+tagInventoryName: '&4===称号仓库==='
+expirationTime: '&4到期时间: {0}.'
+leftTime: '&4剩余时间: 大约 {0}{1} {2}{3} {4}{5}'
+timeUnitD: '天'
+timeUnitH: '小时'
+timeUnitM: '分钟'
+timeForever: '永久'
+tag: '标签/称号'
+tagColorItemName: '&6&l昵称效果'
+tagPrefixItemName: '&6&l昵称前缀'
+tagSuffixItemName: '&6&l昵称后缀'
+msg:
+  parameterMismatch: '&4参数不匹配.'
+  timeParameterIncorrect: '&4时间参数不正确,请输入非零整数.'
+  timeUnitParameterIncorrect: '&4时间单位不正确. 请使用 d或h或m. (d=天, h=小时, m=分钟)'
+  processing: '&2执行中，请等待...'
+  noData: '&4暂时无权限包.'
+  noTagData: '&4暂时无称号包.'
+  packageNum: '&4共有{0}种权限包.'
+  packageList: '{0}权限包名: {1}, 显示名称: {2}'
+  packageDetail: '权限包名: {0}, 显示名称: {1}&r\n权限: {2}\n权限组: {3}'
+  nopermission: '&4你没有权限这么做.'
+  configReloaded: '&2配置重载完成.'
+  failSetPermission: '&4修改权限失败, 请重新进入服务器!'
+  noFindPlayer: '&4找不到名为&2{0}&4的玩家.'
+  noFindPackage: '&4找不到名为&2{0}&4的权限包.'
+  tellGivePackage: '&2{0}给予你 {1}的 {2}.'
+  givePackage: '&2给予玩家 {0} {1}的 {2}.'
+  givePackageFail: '&4未给予玩家 {0} {1}的 {2}.'
+  tellSetPackage: '&2{0}设置你 {1}的 {2}.'
+  setPackage: '&2设置玩家 {0} {1}的 {2}.'
+  setPackageFail: '&4未设置玩家 {0} {1}的 {2}.'
+  tellDelPackage: '&4{0}删除了你的 {1}权限包.'
+  delPackage: '&2删除玩家 {0} 的 {1}.'
+  delPackageFail: '&4未删除玩家 {0} 的 {1}.'
+  tellDelAll: '&4{0}删除了你的所有权限包.'
+  delAll: '&2删除玩家 {0} 的所有权限包.'
+  delAllFail: '&4未删除玩家 {0} 的 所有权限包.'
+  numOfPackages: '====={0}有{1}个权限包====='
+  expirationDate: '{0}权限包: {1}({2}), 到期时间: {3}, {4}'
+  unknownPackage: '未知权限包'
+  isExpirationDate: '你的权限包: {0}({1})&r, 已到期.'
+  funcDisabled: '&4{0} 功能已被禁用.'
+  tagSetSuccess: '&2称号设置成功.'
+cmd:
+  help: '&6/{0} help \n&7  - 显示所有命令.'
+  me: '&6/{0} me \n&7  - 显示自己的权限包.'
+  tag: '&6/{0} tag <c/p/s>\n&7  - 设置你的昵称颜色/称号前缀/称号后缀.'
+  packages: '&6/{0} packages [权限包名] \n&7  - 查看服务器的(某个)权限包.'
+  get: '&6/{0} get <玩家> \n&7  - 查看玩家的权限包.'
+  give: '&6/{0} give <玩家> <权限包名> <时间> <单位:d或h或m> \n&7  - 给玩家一定时间的权限包. (时间累加.) \n&7    时间单位: d=天, h=小时, m=分钟'
+  set: '&6/{0} set <玩家> <权限包名> <时间> <单位:d或h或m> \n&7  - 重置玩家的权限包为一定时间. \n&7    时间单位: d=天, h=小时, m=分钟'
+  remove: '&6/{0} remove <玩家> <权限包名> [t/f] \n&7  - 删除玩家的某个权限包. (t: 删除跨服权限包.)'
+  removeall: '&6/{0} removeall <玩家> [t/f] \n&7  - 删除玩家所有的权限包. (t: 删除跨服权限包.)'
+  reload: '&6/{0} reload \n&7  - 重新加载插件配置.'
+[/code][/color][/spoiler][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]已知问题(作者提醒)[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][size=4][color=#ffffff][b][list]
+[*]如果出现问题一般退出服务器重进就能解决。一次不行再来一次。
+[*]插件重载不会重置在线玩家的权限, 如有必要请重启服务器。
+[*]玩家每次登陆会重置权限包涉及的权限。请不要单独给予玩家涉及的权限。
+[*]服务器关闭时, 插件被禁用的顺序不一, 会导致玩家有权限留存。 如果配置的权限包删掉原来设置的权限(或修改世界), 会导致插件无法清理原有的权限及权限组。(你可以配置一个不使用的权限包, 权限包内含有你想清理的权限及权限组即可。)
+[/list][/b][/color][/size][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]更新日志[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][spoiler][size=4][b][url=http://ci.frog.gg/jenkins/job/PermissionsTime/changes]详细的更新记录[/url]
+[color=#ffffff]2018年6月30日 V0.4.3[/color][quote][color=#000000]1.V0.4.3正式发布
+2.修复一些BUG:
+  1.7.10的兼容
+  以及新玩家数据的BUG[/color][/quote]
+[color=#ffffff]2018年6月25日 V0.4.2[/color][quote][color=#000000]1.V0.4.2正式发布
+2.增加了称号管理功能
+3.修复一些BUG[/color][/quote]
+[color=#ffffff]2017年8月2日 V0.3.1-V0.3.2[/color][quote][color=#000000]1.跨服与非跨服权限包同名兼容处理
+2.优化同名兼容处理
+3.修复一些BUG[/color][/quote]
+[color=#ffffff]2017年8月1日 V0.3.0[/color][quote][color=#000000]1.权限包到期可执行自定义命令[/color][/quote]
+[color=#ffffff]2017年7月31日 V0.2.4[/color][quote][color=#000000]1.插件统计更换成bstats
+2.兼容服务端文件夹路径含有空格字符[/color][/quote]
+[color=#ffffff]2017年7月27日 V0.2.3[/color][quote][color=#000000]1.取消保存配置文件
+2.语言文件整理[/color][/quote]
+[color=#ffffff]2017年7月26日 V0.2.0-V0.2.2[/color][quote][color=#000000]1.命令提示语言支持
+2.mysql模式下的bug(时间累积和创建表)
+3.支持自定义时间单位 天、小时、分钟
+4.语言文件释放修改
+5.提示剩余时间
+6.其他的小BUG[/color][/quote]
+[color=#ffffff]2017年7月24日 V0.1.3[/color][quote][color=#000000]1.检测是否有新版本
+2.提示权限包到期
+3.玩家登录时删除过期的或无效数据[/color][/quote]
+[color=#ffffff]2017年7月19日 V0.1.2[/color][quote][color=#000000]1.支持自定义哪个玩家的头颅 1.8+支持
+2.支持物品发光(附魔效果)
+3.玩家进入游戏时赋予权限更早[/color][/quote]
+[color=#ffffff]2017年7月17日 V0.1.1[/color][quote][color=#000000]1.添加自动补全命令功能
+2.修复多线程导致的蹦服BUG[/color][/quote]
+[color=#ffffff]2017年7月16日 V0.1.0[/color][quote][color=#000000]*插件首次发布！！！[/color][/quote]
+[/b][/size][/spoiler][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]下载地址[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][size=4][b][align=center][color=#000] [url=https://ci.frog.gg/job/PermissionsTime/76/]V0.4.3版下载地址[/url][/color][/align][align=center][color=#ffffff]前置插件：[/color][color=#000][url=https://dev.bukkit.org/projects/vault/files]vault[/url][/color][color=#000000] , [/color][color=#000][url=https://dev.bukkit.org/projects/sqlibrary/files]sqlibrary[/url][/color][/align][align=center][color=#ffffff]前置插件最好去原站下载适合的版本, 如果无法下载可以在帖内下载。[/color][/align]
+[align=center][b][color=#ffffff]帖内下载：[/color][/b][/align][align=center][color=#000][attach]1101088[/attach][/color][/align][align=center][color=#000][b][color=#ff0000]前置插件必须安装[/color][/b][/color][/align][align=center][color=#000][attach]1101089[/attach][/color][/align][align=center][color=#000][attach]1101090[/attach][/color][/align][align=center][color=#000][attach]1101110[/attach]ANSI编码[/color][/align]
+[align=center][color=#000][color=#ff0000][b]如果大家觉得好用就给点金粒吧，如果不好请告诉我，帮助我改进。[/b][/color][/color][/align][align=center][color=#000][b]BUG可以在帖内回复我。[/b][/color][/align][/b][/size][/td][/tr]
+[/table][/align][align=center][table=98%,#4169e1]
+[tr][td][align=center][size=6][color=#ffffff][b]使用统计[/b][/color][/size][/align][/td][/tr]
+[/table][/align][align=center][table=98%,gray]
+[tr][td][align=center][url=https://bstats.org/plugin/bukkit/PermissionsTime][size=4][b]https://bstats.org/plugin/bukkit/PermissionsTime[/b][/size][/url][/align][/td][/tr]
+[/table][/align][/td][/tr]
+[/table][/font][/align]

@@ -1,0 +1,32 @@
+name: ${project.name}
+version: 0.0.1-SNAPSHOT-b1001
+main: gg.frog.mc.nametags.PluginMain
+author:
+- GeekFrog
+description: ${project.description}
+depend:
+- FrogsPluginLib
+softdepend:
+- SQLibrary
+- PlaceholderAPI
+- HolographicDisplays
+commands:
+  nametags:
+    description: Show all commands.
+    usage: /nametags [param]
+  nt:
+    description: Aliases commands for nametags.
+    usage: /nt [param]
+permissions:
+  gg.frog.nametags.*:
+    description: Gives access to all nametags commands.
+    default: op
+    children:
+      nametags.view: true
+      nametags.reload: true
+  nametags.view:
+    description: Set your color/prefix/suffix of tags.
+    default: true
+  nametags.reload:
+    description: Reloads the config file.
+    default: op

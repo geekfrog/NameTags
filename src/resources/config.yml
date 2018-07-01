@@ -1,0 +1,12 @@
+# 插件前缀.
+# Plugin prefix.
+pluginPrefix: '&4[&bNameTags&4] '
+# 是否开启DEBUG模式.
+# Whether to open the DEBUG mode.
+debug: false
+# 是否同意插件上传统计信息.
+# Whether or not you agree with the plugin to upload statistics.
+metrics: true
+# 语言文件名称 在'lang'文件夹内.
+# Language file name.
+lang: zh-cn
