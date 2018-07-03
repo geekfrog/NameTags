@@ -1,6 +1,6 @@
 [align=center][font=微软雅黑][table=95%]
 [tr=black][td][align=center][img=400,50]https://i.loli.net/2017/07/18/596cdf5e63a20.png[/img][/align]
-[align=right][b][size=4][color=#ffffff]—NameTags[/color][/size][/b][size=4][color=#ffffff][b]基于权限的头顶称号插件[/b][/color][/size][/align]
+[align=right][b][size=4][color=#ffffff]—NameTags[/color][/size][/b][size=4][color=#ffffff][b] 基于权限的头顶称号插件[/b][/color][/size][/align]
 [align=center][table=98%,#4169e1]
 [tr][td][align=center][size=6][color=#ffffff][b]唠叨[/b][/color][/size][/align][/td][/tr]
 [/table][/align][align=center][table=98%,gray]
