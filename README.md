@@ -24,7 +24,7 @@
 
 3.自带Placeholder变量: %nametags_fullname% %nametags_prefix% %nametags_suffix% 来显示displayname、prefix+color、suffix
 
-![image](http://i.imgur.com/o7tZTQp.jpg)
+![image](http://i.imgur.com/9YwMopS.jpg)
 ![image](http://i.imgur.com//E3SNYNj.jpg)
 
 ![image](http://i.imgur.com/zRAOpFf.jpg)
