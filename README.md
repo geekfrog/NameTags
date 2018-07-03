@@ -1,7 +1,7 @@
 # NameTags
 ### 基于权限的GUI称号系统.
 ### 支持PAPI变量及称号切换.
-### 支持大部分计分板插件. 如：喵式计分板
+### 兼容大部分计分板插件. 如：喵式计分板
 
 ##### NameTags插件下载地址:[https://ci.frog.gg/job/NameTags/](https://ci.frog.gg/job/NameTags/)
 
