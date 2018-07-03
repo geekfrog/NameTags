@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gg.frog.mc</groupId>
 	<artifactId>nametags</artifactId>
-	<version>0.0.2-SNAPSHOT-b1002</version>
+	<version>0.0.3-SNAPSHOT-b1003</version>
 	<packaging>jar</packaging>
 	<name>NameTags</name>
 	<description>基于权限的GUI称号系统. 支持PAPI变量及称号切换.</description>

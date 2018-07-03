@@ -16,17 +16,17 @@ import gg.frog.mc.base.utils.config.IConfigBean;
  */
 public class TagPackageBean implements IConfigBean {
 
-	//所需权限
+	// 所需权限
 	private String permissions;
-	//名称颜色
+	// 名称颜色
 	private List<String> namecolor = new ArrayList<>();
-	//前缀
+	// 前缀
 	private List<String> prefix = new ArrayList<>();
-	//后缀
+	// 后缀
 	private List<String> suffix = new ArrayList<>();
-	//说明
+	// 说明
 	private String description;
-	
+
 	public String getPermissions() {
 		return permissions;
 	}
@@ -80,16 +80,15 @@ public class TagPackageBean implements IConfigBean {
 
 	@Override
 	public void toConfigBean(MemorySection config) {
-		permissions = config.getString("permissions");
+		permissions = config.getString("permissions", "");
 		namecolor = config.getStringList("namecolor");
 		prefix = config.getStringList("prefix");
 		suffix = config.getStringList("suffix");
-		description = config.getString("description");
+		description = config.getString("description", "");
 	}
 
 	@Override
 	public String toString() {
-		return "PermissionPackageBean [permissions=" + permissions + ", namecolor=" + namecolor + ", prefix=" + prefix + ", suffix="
-				+ suffix + ", description=" + description + "]";
+		return "PermissionPackageBean [permissions=" + permissions + ", namecolor=" + namecolor + ", prefix=" + prefix + ", suffix=" + suffix + ", description=" + description + "]";
 	}
 }

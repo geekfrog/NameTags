@@ -87,7 +87,11 @@ public class PlayerTagShow {
 			}
 		}
 		if (inventory != null && size > 0) {
-			p.openInventory(inventory);
+			try {
+				p.openInventory(inventory);
+			} catch (Exception e) {
+				pm.getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "§4Catch Exception: " + e.getMessage()));
+			}
 		} else {
 			p.sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + LangCfg.MSG_NO_TAG_DATA));
 		}

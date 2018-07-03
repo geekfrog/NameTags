@@ -12,7 +12,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.scoreboard.Scoreboard;
 
@@ -81,6 +80,15 @@ public class TagNameCfg extends PluginConfig {
 		ONE_LINE_DISPLAY = setGetDefault("oneLineDisplay", true);
 		REFRESH_TAG_TIME = setGetDefault("refreshTagTime", -1);
 		PACKAGES = getObjMap("packages", TagPackageBean.class);
+
+		TagPackageBean defaultTagPackage = new TagPackageBean();
+		defaultTagPackage.setDescription(LangCfg.DEFAULT_TAG_DESCRIPTION);
+		defaultTagPackage.getNamecolor().add(DEFAULT_NAMECOLOR);
+		defaultTagPackage.getPrefix().add(DEFAULT_PREFIX);
+		defaultTagPackage.getSuffix().add(DEFAULT_SUFFIX);
+		defaultTagPackage.setPermissions("");
+		PACKAGES.put("defaultTagPackage", defaultTagPackage);
+
 		TEMPLATE_LORE = getConfig().getStringList("template.lore");
 		getConfig().set("template.lore", TEMPLATE_LORE);
 		setObj("packages", PACKAGES);
@@ -124,7 +132,7 @@ public class TagNameCfg extends PluginConfig {
 				SUFFIX_ITEMS.put(e.getValue().getPermissions(), items);
 			}
 		}
-		
+
 		if (task != null) {
 			task.cancel();
 		}
@@ -209,13 +217,7 @@ public class TagNameCfg extends PluginConfig {
 						meta.setLore(lores);
 						item.setItemMeta(meta);
 						if (skullOwner != null) {
-							try {
-								((SkullMeta) meta).setOwner(skullOwner);
-								item.setItemMeta(meta);
-							} catch (Exception e) {
-								e.printStackTrace();
-								item = ItemUtil.addSkullOwner(item, skullOwner);
-							}
+							item = ItemUtil.addSkullOwner(item, skullOwner);
 						}
 						items.add(item);
 					}

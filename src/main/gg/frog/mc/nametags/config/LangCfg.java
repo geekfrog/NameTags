@@ -17,6 +17,7 @@ public class LangCfg extends PluginConfig {
 	public static String TAG_COLOR_ITEM_NAME = null;
 	public static String TAG_PREFIX_ITEM_NAME = null;
 	public static String TAG_SUFFIX_ITEM_NAME = null;
+	public static String DEFAULT_TAG_DESCRIPTION = null;
 
 	public static String MSG_PARAMETER_MISMATCH = null;
 	public static String MSG_PROCESSING = null;
@@ -43,6 +44,7 @@ public class LangCfg extends PluginConfig {
 		TAG_COLOR_ITEM_NAME = getConfig().getString("tagColorItemName", "&6&lName Style");
 		TAG_PREFIX_ITEM_NAME = getConfig().getString("tagPrefixItemName", "&6&lTag Prefix");
 		TAG_SUFFIX_ITEM_NAME = getConfig().getString("tagSuffixItemName", "&6&lTag Suffix");
+		DEFAULT_TAG_DESCRIPTION = getConfig().getString("defaultTagDescription", "&6&lDefault Tag");
 
 		MSG_PARAMETER_MISMATCH = getConfig().getString("msg.parameterMismatch", "&4Parameter mismatch.");
 		MSG_PROCESSING = getConfig().getString("msg.processing", "&2Please wait for processing...");

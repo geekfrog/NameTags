@@ -2,6 +2,7 @@ tagInventoryName: '&4===称号仓库==='
 tagColorItemName: '&6&l昵称效果'
 tagPrefixItemName: '&6&l昵称前缀'
 tagSuffixItemName: '&6&l昵称后缀'
+defaultTagDescription: '&6&l默认称号'
 msg:
   parameterMismatch: '&4参数不匹配.'
   processing: '&2执行中，请等待...'

@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.InventoryView;
 
 import gg.frog.mc.base.utils.StrUtil;
 import gg.frog.mc.base.utils.data.PlayerData;
@@ -77,6 +78,7 @@ public class TagsListener implements Listener {
 	@EventHandler
 	public void onPlayerClick(InventoryClickEvent event) {
 		if (StrUtil.messageFormat(LangCfg.TAG_INVENTORY_NAME + "§r§5§9§2§0§2§r").equals(event.getInventory().getName())) {
+			event.setCancelled(true);
 			try {
 				if (event.getCurrentItem() != null && event.getCurrentItem().getItemMeta() != null && event.getCurrentItem().getItemMeta().hasLore()) {
 					List<String> lores = event.getCurrentItem().getItemMeta().getLore();
@@ -96,13 +98,13 @@ public class TagsListener implements Listener {
 									playerTag.setSuffix(lores.get(lores.size() - 1).substring(2));
 								} else {
 									((Player) event.getWhoClicked()).sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + LangCfg.MSG_NO_PERMISSION));
-									event.setCancelled(true);
 									return;
 								}
 								playerTag.setPlayerDisplayName((Player) event.getWhoClicked(), true);
 								playerTag.saveConfig();
 								((Player) event.getWhoClicked()).sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + LangCfg.MSG_TAG_SET_SUCCESS));
-								event.setCancelled(true);
+								InventoryView inventory = event.getView();
+								inventory.close();
 								return;
 							}
 						}
@@ -112,7 +114,6 @@ public class TagsListener implements Listener {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			event.setCancelled(true);
 		}
 	}
 }

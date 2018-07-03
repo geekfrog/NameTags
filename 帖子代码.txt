@@ -7,7 +7,7 @@
 [tr][td]
 [align=center][size=4][color=#dda0dd][b]本插件需要JAVA8！！！[/b][/color][/size][/align][align=center]
 [size=4][color=#98fb98][b]下载地址在最下面！[/b][/color][/size][/align]
-[align=center][size=4][color=#c0c0c0][b]最新版本: [/b][/color][b][color=#8b0000]0.0.2[/color][color=#c0c0c0]，推荐大家使用新版本，只需替换插件的jar包和语言文件即可! [/color][/b][/size][/align]
+[align=center][size=4][color=#c0c0c0][b]最新版本: [/b][/color][b][color=#8b0000]0.0.3[/color][color=#c0c0c0]，推荐大家使用新版本，只需替换插件的jar包和语言文件即可! [/color][/b][/size][/align]
 [align=center][size=4][b][color=#c0c0c0]请对比原配置, 查看新版本是否增加了新的配置项![/color][/b][/size][/align]
 [/td][/tr]
 [/table][/align][align=center][table=98%,#4169e1]
@@ -88,7 +88,7 @@ defaultPrefix: '&3[player]'
 defaultSuffix: ''
 # 如果你有其他的插件来修改玩家的displayname, 请禁用此项或禁止其他插件修改. 比如Essentials插件.
 # 如果安装了PlaceholderAPI 可以使用
-#  %nametagsfullname% %nametags_prefix% %nametags_suffix% 来显示displayname prefix+color suffix
+#  %nametags_fullname% %nametags_prefix% %nametags_suffix% 来显示displayname prefix+color suffix
 # If you have other plugin, to modifies player displayname, please disable this.
 changeDisplayname: true
 # 使用HolographicDisplays显示称号. 称号可以更长,不会被省略.
@@ -168,6 +168,7 @@ tagInventoryName: '&4===称号仓库==='
 tagColorItemName: '&6&l昵称效果'
 tagPrefixItemName: '&6&l昵称前缀'
 tagSuffixItemName: '&6&l昵称后缀'
+defaultTagDescription: '&6&l默认称号'
 msg:
   parameterMismatch: '&4参数不匹配.'
   processing: '&2执行中，请等待...'
@@ -181,22 +182,28 @@ cmd:
   reload: '&6/{0} reload \n&7  - 重新加载插件配置.'
 [/code][/color][/spoiler][/td][/tr]
 [/table][/align][align=center][table=98%,#4169e1]
-[tr][td][align=center][size=6][color=#ffffff][b]已知问题(作者提醒)[/b][/color][/size][/align][/td][/tr]
+[tr][td][align=center][size=6][color=#ffffff][b]常见问题(作者提醒)[/b][/color][/size][/align][/td][/tr]
 [/table][/align][align=center][table=98%,gray]
 [tr][td][size=4][color=#ffffff][b][list]
-[*]就算是OP也需要有权限才能使用相应的称号。
+[*]如果插件不能正常工作,如1.7.10版本配置文件需要改成ANSI编码.
+[*]如果头顶显示了称号,但是聊天和TAB列表不显示,你需要设置Essentials的配置项"change-displayname"为"false"
+[*]如果不使用HolographicDisplays,那么前后缀的最大长度为16个字符(包括文字颜色). 注意: 前缀为prefix+"§r"+namecolor, 前后缀长度超出16个字符会被省略.
+[*]就算是OP可能也需要有权限才能使用相应的称号。
 [/list][/b][/color][/size][/td][/tr]
 [/table][/align][align=center][table=98%,#4169e1]
 [tr][td][align=center][size=6][color=#ffffff][b]更新日志[/b][/color][/size][/align][/td][/tr]
 [/table][/align][align=center][table=98%,gray]
 [tr][td][spoiler][size=4][b][url=http://ci.frog.gg/jenkins/job/FrogsPluginLib/changes]详细的更新记录[/url]
+[color=#ffffff]2018年7月4日 V0.0.3[/color][quote][color=#000000]1.修复GUI显示玩家头的BUG
+2.增加选择默认称号
+3.称号设置成功后GUI将会被关闭[/color][/quote]
 [color=#ffffff]2018年7月3日 V0.0.2[/color][quote][color=#000000]*插件首次发布！！！[/color][/quote]
 [color=#ffffff]2018年7月1日 V0.0.1[/color][quote]插件从PermissionsTime分离.[/quote]
 [/b][/size][/spoiler][/td][/tr]
 [/table][/align][align=center][table=98%,#4169e1]
 [tr][td][align=center][size=6][color=#ffffff][b]下载地址[/b][/color][/size][/align][/td][/tr]
 [/table][/align][align=center][table=98%,gray]
-[tr][td][size=4][b][align=center][color=#000] [url=https://ci.frog.gg/job/NameTags/1/]V0.0.2版下载地址[/url][/color][/align][align=center][color=#ffffff]前置插件：[/color][color=#000][url=http://www.mcbbs.net/thread-802799-1-1.html]FrogsPluginLib(宅宅蛙的插件前置库)[/url][/color][/align][align=center][color=#ffffff]前置插件最好去原站下载适合的版本, 如果无法下载可以在帖内下载。[/color][/align]
+[tr][td][size=4][b][align=center][color=#000] [url=https://ci.frog.gg/job/NameTags/6/]V0.0.3版下载地址[/url][/color][/align][align=center][color=#ffffff]前置插件：[/color][color=#000][url=http://www.mcbbs.net/thread-802799-1-1.html]FrogsPluginLib(宅宅蛙的插件前置库)[/url][/color][/align][align=center][color=#ffffff]前置插件最好去原站下载适合的版本, 如果无法下载可以在帖内下载。[/color][/align]
 [align=center][b][color=#ffffff]帖内下载：[/color][/b][/align][align=center][color=#000][attach]1217676[/attach][/color][/align][align=center][color=#000][b][color=#ff0000]前置插件必须安装[/color][/b][/color][/align][align=center][color=#000][attach]1217662[/attach][/color][/align]
 [align=center][color=#000][color=#98fb98][b]如果大家觉得好用就给点金粒吧，如果不好请告诉我，帮助我改进。[/b][/color][/color][/align][align=center][color=#000][b]BUG可以在帖内回复我。[/b][/color][/align][/b][/size][/td][/tr]
 [/table][/align][align=center][table=98%,#4169e1]

@@ -2,6 +2,7 @@ tagInventoryName: '&4===Tag Packages==='
 tagColorItemName: '&6&lName Style'
 tagPrefixItemName: '&6&lTag Prefix'
 tagSuffixItemName: '&6&lTag Suffix'
+defaultTagDescription: '&6&lDefault Tag'
 msg:
   parameterMismatch: '&4Parameter mismatch.'
   processing: '&2Please wait for processing...'
