@@ -124,7 +124,7 @@ public class TagNameCfg extends PluginConfig {
 				SUFFIX_ITEMS.put(e.getValue().getPermissions(), items);
 			}
 		}
-
+		
 		if (task != null) {
 			task.cancel();
 		}

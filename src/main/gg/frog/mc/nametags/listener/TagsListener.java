@@ -8,8 +8,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -29,12 +29,13 @@ public class TagsListener implements Listener {
 		this.pm = pm;
 	}
 
-	@EventHandler(priority = EventPriority.LOWEST)
-	public void onJoin(PlayerLoginEvent event) {
+	@EventHandler(priority = EventPriority.MONITOR)
+	public void onJoin(PlayerJoinEvent event) {
 		pm.getServer().getScheduler().runTaskLaterAsynchronously(pm, new Runnable() {
 			@Override
 			public void run() {
 				PlayerTagBean.initPlayerTag(event.getPlayer(), pm);
+				PlayerTagBean.addAllTeamToSelfScoreboard(event.getPlayer());
 			}
 		}, 1 * 20);
 	}

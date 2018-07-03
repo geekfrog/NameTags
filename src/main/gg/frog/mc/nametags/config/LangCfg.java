@@ -52,7 +52,7 @@ public class LangCfg extends PluginConfig {
 		MSG_TAG_SET_SUCCESS = getConfig().getString("msg.tagSetSuccess", "&2Tag Set Success.");
 
 		CMD_HELP = getConfig().getString("cmd.help", "/{0} help \\n&7  - Show commands.");
-		CMD_VIEW = getConfig().getString("cmd.view", "&6/{0} tag <c/p/s> \\n&7  - Set your color/prefix/suffix of tags.");
+		CMD_VIEW = getConfig().getString("cmd.view", "&6/{0} <c/p/s> \\n&7  - Set your color/prefix/suffix of tags.");
 		CMD_RELOAD = getConfig().getString("cmd.reload", "&6/{0} reload \\n&7  - Reloads the config file.");
 	}
 }

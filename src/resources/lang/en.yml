@@ -11,5 +11,5 @@ msg:
   tagSetSuccess: '&2Tag Set Success.'
 cmd:
   help: '&6/{0} help \n&7  - Show commands.'
-  view: '&6/{0} tag <c/p/s>\n&7  - Set your color/prefix/suffix of tags.'
+  view: '&6/{0} <c/p/s>\n&7  - Set your color/prefix/suffix of tags.'
   reload: '&6/{0} reload \n&7  - Reloads the config file.'

@@ -5,6 +5,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.NameTagVisibility;
+import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
 import com.gmail.filoghost.holographicdisplays.api.Hologram;
@@ -41,8 +43,6 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 	private String displaySuffix;
 	// 玩家所在队伍
 	private Team team;
-	// 不可见的队伍名
-	private String invisibleName;
 	// hd
 	private Hologram holograms;
 
@@ -69,7 +69,7 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 		super.saveConfig();
 	}
 
-	public static void initPlayerTag(Player player, PluginMain pm) {
+	public static PlayerTagBean initPlayerTag(Player player, PluginMain pm) {
 		String uuid = PlayerData.getPlayerUUIDByName(player);
 		PlayerTagBean playerTag = null;
 		if (TagNameCfg.PLAYER_TAG.containsKey(uuid)) {
@@ -79,6 +79,7 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 			TagNameCfg.PLAYER_TAG.put(uuid, playerTag);
 		}
 		playerTag.setPlayerDisplayName(player, true);
+		return playerTag;
 	}
 
 	public void setPlayerDisplayName(Player player) {
@@ -139,17 +140,11 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 						System.out.println("PlayerTagBean:" + playerTag);
 					}
 					try {
-						if (TagNameCfg.scoreboard == null) {
-							TagNameCfg.scoreboard = pb.getServer().getScoreboardManager().getNewScoreboard();
-						}
-						if (invisibleName == null) {
-							invisibleName = String.valueOf(TagNameCfg.scoreboard.getTeams().size() + 1).replaceAll("", "§");
+						team = TagNameCfg.scoreboard.getTeam(player.getName());
+						if (team == null) {
+							team = TagNameCfg.scoreboard.registerNewTeam(player.getName());
 						}
 						if (!TagNameCfg.USE_HD_PLUGIN) {
-							team = TagNameCfg.scoreboard.getTeam(player.getName());
-							if (team == null) {
-								team = TagNameCfg.scoreboard.registerNewTeam(player.getName());
-							}
 							String teamPrefix = displayPrefix.length() > 16 ? (displayPrefix.substring(0, 7) + ".." + displayPrefix.substring(displayPrefix.length() - 7)) : displayPrefix;
 							team.setPrefix(teamPrefix);
 							String teamSuffix = displaySuffix.length() > 16 ? (displaySuffix.substring(0, 7) + ".." + displaySuffix.substring(displaySuffix.length() - 7)) : displaySuffix;
@@ -157,27 +152,68 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 							if (!(holograms == null || holograms.isDeleted())) {
 								holograms.delete();
 							}
-						} else {
-							team = TagNameCfg.scoreboard.getTeam(invisibleName);
-							if (team == null) {
-								team = TagNameCfg.scoreboard.registerNewTeam(invisibleName);
-							}
-							team.setPrefix("");
-							team.setSuffix("");
-							if (NMSUtil.getServerVersion().startsWith("v1_7") || NMSUtil.getServerVersion().startsWith("v1_8")) {
+							if (NMSUtil.getServerVersion().startsWith("v1_7")) {
 							} else {
-								team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
+								// team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
+								team.setNameTagVisibility(NameTagVisibility.ALWAYS);
+							}
+						} else {
+							if (NMSUtil.getServerVersion().startsWith("v1_7")) {
+							} else {
+								// team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
+								team.setNameTagVisibility(NameTagVisibility.NEVER);
 							}
 							initHologramsName(player);
 						}
 						team.addPlayer(player);
 						player.setScoreboard(TagNameCfg.scoreboard);
+						addTeamToAllScoreboard(team);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
 			}
 		});
+	}
+
+	private void addTeamToAllScoreboard(Team team) {
+		for (Player player : pb.getServer().getOnlinePlayers()) {
+			if (player.getScoreboard() != TagNameCfg.scoreboard) {
+				Scoreboard sb = player.getScoreboard();
+				try {
+					Team psTeam = sb.getTeam(team.getName());
+					if (psTeam == null) {
+						psTeam = sb.registerNewTeam(team.getName());
+					}
+					psTeam.setPrefix(team.getPrefix());
+					psTeam.setSuffix(team.getSuffix());
+					psTeam.setNameTagVisibility(team.getNameTagVisibility());
+					psTeam.addPlayer(team.getPlayers().iterator().next());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	public static void addAllTeamToSelfScoreboard(Player player) {
+		if (player.getScoreboard() != TagNameCfg.scoreboard) {
+			Scoreboard sb = player.getScoreboard();
+			for (Team team : TagNameCfg.scoreboard.getTeams()) {
+				try {
+					Team psTeam = sb.getTeam(team.getName());
+					if (psTeam == null) {
+						psTeam = sb.registerNewTeam(team.getName());
+					}
+					psTeam.setPrefix(team.getPrefix());
+					psTeam.setSuffix(team.getSuffix());
+					psTeam.setNameTagVisibility(team.getNameTagVisibility());
+					psTeam.addPlayer(team.getPlayers().iterator().next());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	public void initHologramsName(Player player) {
@@ -284,7 +320,7 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 
 	@Override
 	public String toString() {
-		return "PlayerTagBean [namecolor=" + namecolor + ", prefix=" + prefix + ", suffix=" + suffix + ", displayName=" + displayName + ", displayPrefix=" + displayPrefix + ", displaySuffix=" + displaySuffix + ", invisibleName=" + invisibleName + "]";
+		return "PlayerTagBean [namecolor=" + namecolor + ", prefix=" + prefix + ", suffix=" + suffix + ", displayName=" + displayName + ", displayPrefix=" + displayPrefix + ", displaySuffix=" + displaySuffix + "]";
 	}
 
 }

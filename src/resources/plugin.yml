@@ -1,5 +1,5 @@
 name: ${project.name}
-version: 0.0.1-SNAPSHOT-b1001
+version: 0.0.2-SNAPSHOT-b1002
 main: gg.frog.mc.nametags.PluginMain
 author:
 - GeekFrog
@@ -7,9 +7,9 @@ description: ${project.description}
 depend:
 - FrogsPluginLib
 softdepend:
-- SQLibrary
 - PlaceholderAPI
 - HolographicDisplays
+- ProtocolLib
 commands:
   nametags:
     description: Show all commands.

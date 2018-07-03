@@ -361,6 +361,8 @@ cmd:
 [/table][/align][align=center][table=98%,#4169e1]
 [tr][td][align=center][size=6][color=#ffffff][b]使用统计[/b][/color][/size][/align][/td][/tr]
 [/table][/align][align=center][table=98%,gray]
-[tr][td][align=center][url=https://bstats.org/plugin/bukkit/PermissionsTime][size=4][b]https://bstats.org/plugin/bukkit/PermissionsTime[/b][/size][/url][/align][/td][/tr]
+[tr][td][align=center][url=https://bstats.org/plugin/bukkit/PermissionsTime][size=4][b]https://bstats.org/plugin/bukkit/PermissionsTime[/b][/size][/url]
+本插件所用所有代码均为原创,不存在借用/抄袭等行为
+[/align][/td][/tr]
 [/table][/align][/td][/tr]
 [/table][/font][/align]

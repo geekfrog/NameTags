@@ -1,9 +1,13 @@
 # NameTags
-### 基于权限的GUI称号系统. 支持PAPI变量及称号切换.
+### 基于权限的GUI称号系统.
+### 支持PAPI变量及称号切换.
+### 支持大部分计分板插件. 如：喵式计分板
+
 ##### NameTags插件下载地址:[https://ci.frog.gg/job/NameTags/](https://ci.frog.gg/job/NameTags/)
 
 ##### [插件使用说明](https://github.com/geekfrog/NameTags/wiki/NameTags-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-##### 前置插件FrogsPluginLib下载地址:[https://ci.frog.gg/job/FrogsPluginLib/](https://ci.frog.gg/job/FrogsPluginLib/)
+##### 前置插件FrogsPluginLib(宅宅蛙的插件前置库)
+下载地址:[https://ci.frog.gg/job/FrogsPluginLib/](https://ci.frog.gg/job/FrogsPluginLib/)
 
 ### 可选前置插件：
 ##### 前置插件PlaceholderAPI下载地址:[https://www.spigotmc.org/resources/placeholderapi.6245/](https://www.spigotmc.org/resources/placeholderapi.6245/)

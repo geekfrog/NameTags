@@ -11,6 +11,7 @@ import gg.frog.mc.base.utils.PluginBase;
 import gg.frog.mc.nametags.command.NtCommand;
 import gg.frog.mc.nametags.config.ConfigManager;
 import gg.frog.mc.nametags.config.PluginCfg;
+import gg.frog.mc.nametags.config.TagNameCfg;
 import gg.frog.mc.nametags.listener.TagsListener;
 import gg.frog.mc.nametags.placeholder.TagPlaceholder;
 
@@ -21,7 +22,6 @@ public class PluginMain extends PluginBase {
 	private ConfigManager cm = null;
 	private PluginMain pm = null;
 	public static boolean enabledHdPlugin;
-	public static boolean enabledPlaceholder;
 
 	public PluginMain() {
 		PLUGIN_NAME = getDescription().getName();
@@ -48,6 +48,7 @@ public class PluginMain extends PluginBase {
 			registerListeners();
 			registerCommands();
 			getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "§2Startup successful!"));
+			TagNameCfg.scoreboard = Bukkit.getServer().getScoreboardManager().getNewScoreboard();
 			getServer().getScheduler().runTask(pm, new Runnable() {
 				public void run() {
 					if (PluginCfg.IS_METRICS) {
@@ -99,7 +100,7 @@ public class PluginMain extends PluginBase {
 				}
 			}
 		}
-		enabledPlaceholder = Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
+		boolean enabledPlaceholder = Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
 		if (!enabledPlaceholder) {
 			getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "§ePlaceholder is not installed or not enabled."));
 			getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "§eSome func will be disabled."));
@@ -121,7 +122,6 @@ public class PluginMain extends PluginBase {
 			getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "§eHolographicDisplays is not installed or not enabled."));
 			getServer().getConsoleSender().sendMessage(StrUtil.messageFormat(PluginCfg.PLUGIN_PREFIX + "§eSome func will be disabled."));
 		}
-
 		if (needDepend) {
 			return false;
 		}

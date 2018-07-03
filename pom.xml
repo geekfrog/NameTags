@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gg.frog.mc</groupId>
 	<artifactId>nametags</artifactId>
-	<version>0.0.1-SNAPSHOT-b1001</version>
+	<version>0.0.2-SNAPSHOT-b1002</version>
 	<packaging>jar</packaging>
 	<name>NameTags</name>
 	<description>基于权限的GUI称号系统. 支持PAPI变量及称号切换.</description>
@@ -21,6 +21,10 @@
 		<repository>
 			<id>Frog Nexus Repository</id>
 			<url>https://maven.frog.gg/repository/maven-public/</url>
+		</repository>
+		<repository>
+			<id>dmulloy2-repo</id>
+			<url>http://repo.dmulloy2.net/nexus/repository/public/</url>
 		</repository>
 		<repository>
 			<id>spigotmc-repo</id>
@@ -52,12 +56,12 @@
 		<dependency>
 			<groupId>gg.frog.mc</groupId>
 			<artifactId>base</artifactId>
-			<version>0.0.1-SNAPSHOT-b1001</version>
+			<version>LATEST</version>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
-			<version>1.12.2-R0.1-SNAPSHOT</version>
+			<version>1.8-R0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
@@ -82,6 +86,11 @@
 			<artifactId>holographicdisplays-api</artifactId>
 			<version>2.2.7-SNAPSHOT</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.comphenix.protocol</groupId>
+			<artifactId>ProtocolLib-API</artifactId>
+			<version>4.2.1</version>
 		</dependency>
 	</dependencies>
 	<build>
