@@ -12,6 +12,9 @@ defaultSuffix: ''
 #  %nametags_fullname% %nametags_prefix% %nametags_suffix% 来显示displayname prefix+color suffix
 # If you have other plugin, to modifies player displayname, please disable this.
 changeDisplayname: true
+# 是否兼容计分板插件. 推荐安装了计分板插件的用户设置为 true.
+# Compatible scoreboard plugins.
+compatibilityMode: false
 # 使用HolographicDisplays显示称号. 称号可以更长,不会被省略.
 # use HolographicDisplays to show Tags. The Tag can be more than 16 char
 useHdPlugin: false

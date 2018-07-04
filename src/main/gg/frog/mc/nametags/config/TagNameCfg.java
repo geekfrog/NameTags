@@ -28,6 +28,7 @@ public class TagNameCfg extends PluginConfig {
 	public static String DEFAULT_PREFIX = null;
 	public static String DEFAULT_SUFFIX = null;
 	public static boolean CHANGE_DISPLAYNAME = true;
+	public static boolean COMPATIBILITY_MODE = false;
 	public static boolean USE_HD_PLUGIN = false;
 	public static boolean ONE_LINE_DISPLAY = false;
 	public static Integer REFRESH_TAG_TIME = null;
@@ -66,6 +67,7 @@ public class TagNameCfg extends PluginConfig {
 		DEFAULT_PREFIX = setGetDefault("defaultPrefix", "");
 		DEFAULT_SUFFIX = setGetDefault("defaultSuffix", "");
 		CHANGE_DISPLAYNAME = setGetDefault("changeDisplayname", true);
+		COMPATIBILITY_MODE = setGetDefault("compatibilityMode", false);
 		USE_HD_PLUGIN = setGetDefault("useHdPlugin", false);
 		if (USE_HD_PLUGIN && !PluginMain.enabledHdPlugin) {
 			USE_HD_PLUGIN = false;

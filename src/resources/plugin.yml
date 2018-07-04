@@ -1,5 +1,5 @@
 name: ${project.name}
-version: 0.0.2-SNAPSHOT-b1002
+version: 0.0.4-SNAPSHOT-b1004
 main: gg.frog.mc.nametags.PluginMain
 author:
 - GeekFrog

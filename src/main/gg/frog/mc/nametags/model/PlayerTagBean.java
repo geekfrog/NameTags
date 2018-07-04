@@ -146,8 +146,8 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 						}
 						if (!TagNameCfg.USE_HD_PLUGIN) {
 							String teamPrefix = displayPrefix.length() > 16 ? (displayPrefix.substring(0, 7) + ".." + displayPrefix.substring(displayPrefix.length() - 7)) : displayPrefix;
-							team.setPrefix(teamPrefix);
 							String teamSuffix = displaySuffix.length() > 16 ? (displaySuffix.substring(0, 7) + ".." + displaySuffix.substring(displaySuffix.length() - 7)) : displaySuffix;
+							team.setPrefix(teamPrefix);
 							team.setSuffix(teamSuffix);
 							if (!(holograms == null || holograms.isDeleted())) {
 								holograms.delete();
@@ -158,6 +158,8 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 								team.setNameTagVisibility(NameTagVisibility.ALWAYS);
 							}
 						} else {
+							team.setPrefix("");
+							team.setSuffix("");
 							if (NMSUtil.getServerVersion().startsWith("v1_7")) {
 							} else {
 								// team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
@@ -166,8 +168,11 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 							initHologramsName(player);
 						}
 						team.addPlayer(player);
-						player.setScoreboard(TagNameCfg.scoreboard);
-						addTeamToAllScoreboard(team);
+						if (TagNameCfg.COMPATIBILITY_MODE) {
+							addTeamToAllScoreboard(team);
+						} else {
+							player.setScoreboard(TagNameCfg.scoreboard);
+						}
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -187,7 +192,11 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 					}
 					psTeam.setPrefix(team.getPrefix());
 					psTeam.setSuffix(team.getSuffix());
-					psTeam.setNameTagVisibility(team.getNameTagVisibility());
+					if (NMSUtil.getServerVersion().startsWith("v1_7")) {
+					} else {
+						// team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
+						psTeam.setNameTagVisibility(team.getNameTagVisibility());
+					}
 					psTeam.addPlayer(team.getPlayers().iterator().next());
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -207,7 +216,11 @@ public class PlayerTagBean extends PluginConfig implements IConfigBean, Cloneabl
 					}
 					psTeam.setPrefix(team.getPrefix());
 					psTeam.setSuffix(team.getSuffix());
-					psTeam.setNameTagVisibility(team.getNameTagVisibility());
+					if (NMSUtil.getServerVersion().startsWith("v1_7")) {
+					} else {
+						// team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
+						psTeam.setNameTagVisibility(team.getNameTagVisibility());
+					}
 					psTeam.addPlayer(team.getPlayers().iterator().next());
 				} catch (Exception e) {
 					e.printStackTrace();

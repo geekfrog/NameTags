@@ -36,7 +36,9 @@ public class TagsListener implements Listener {
 			@Override
 			public void run() {
 				PlayerTagBean.initPlayerTag(event.getPlayer(), pm);
-				PlayerTagBean.addAllTeamToSelfScoreboard(event.getPlayer());
+				if (TagNameCfg.COMPATIBILITY_MODE) {
+					PlayerTagBean.addAllTeamToSelfScoreboard(event.getPlayer());
+				}
 			}
 		}, 1 * 20);
 	}
