@@ -17,13 +17,19 @@
 
 经测试支持大部分1.7.10-1.12的服务器. 其他版本未做测试.
 
-#### 称号功能: 
-1.支持Placeholder变量、HolographicDisplays显示称号(解决称号长度限制问题)
+#### 插件功能: 
+- 基于权限的称号插件
+- 可随时切换要显示的称号
+- GUI同时显示可用称号及不可用称号.
+- 兼容大部分计分板插件(如：喵式计分板)
+- 支持PlaceholderApi变量
+- 支持使用HolographicDisplays显示称号(解决称号长度限制问题)
+- 可以设置默认称号、是否修改displayname、是否使用HolographicDisplays、以及称号刷新时间(使用Placeholder变量需要)
+- 自带Placeholder变量: %nametags_fullname% %nametags_prefix% %nametags_suffix% 来显示displayname、prefix+color、suffix
+- 支持UUID
+- 等等...
 
-2.可以设置称号功能开关、默认称号、是否 修改displayname、是否使用HolographicDisplays、以及称号刷新时间(使用Placeholder变量的话)
-
-3.自带Placeholder变量: %nametags_fullname% %nametags_prefix% %nametags_suffix% 来显示displayname、prefix+color、suffix
-
+#### 效果展示: 
 ![image](http://i.imgur.com/9YwMopS.jpg)
 ![image](http://i.imgur.com//E3SNYNj.jpg)
 
@@ -33,6 +39,15 @@
 ![image](http://i.imgur.com/FGxa96D.jpg)
 ![image](http://i.imgur.com/ovCir3l.jpg)
 ![image](http://i.imgur.com/1oel29B.jpg)
+
+#### 常见问题(作者提醒)：
+- 如果插件不能正常工作,如1.7.10版本配置文件需要改成ANSI编码.
+- 如果头顶显示了称号,但是聊天和TAB列表不显示,你需要设置Essentials的配置项"change-displayname"为"false"
+- 如果你安装了计分板插件, 而导致称号无法显示, 请尝试设置配置文件compatibilityMode为true. 并调整计分板与称号的刷新时间达到最优效果!
+- 如果不使用HolographicDisplays,那么前后缀的最大长度为16个字符(包括文字颜色). 注意: 前缀为prefix+"§r"+namecolor, 前后缀长度超出16个字符会被省略.
+- 使用HolographicDisplays请同时配合ProtocolLib使用，ProtocolLib使HD有一些很好的特性.
+- 1.7.10下使用HD可能会有一些问题, 并且除了HD显示的称号及名字外, 还会额外显示玩家的名字.
+- 就算是OP可能也需要有权限才能使用相应的称号。
 
 #### 插件进度：
 
