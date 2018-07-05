@@ -192,6 +192,7 @@ cmd:
 [*]如果头顶显示了称号,但是聊天和TAB列表不显示,你需要设置Essentials的配置项"change-displayname"为"false"
 [*]如果你安装了计分板插件, 而导致称号无法显示, 请尝试设置配置文件compatibilityMode为true. 并调整计分板与称号的刷新时间达到最优效果!
 [*]如果不使用HolographicDisplays,那么前后缀的最大长度为16个字符(包括文字颜色). 注意: 前缀为prefix+"§r"+namecolor, 前后缀长度超出16个字符会被省略.
+[*]使用HolographicDisplays请同时配合ProtocolLib使用，ProtocolLib使HD有一些很好的特性.
 [*]1.7.10下使用HD可能会有一些问题, 并且除了HD显示的称号及名字外, 还会额外显示玩家的名字.
 [*]就算是OP可能也需要有权限才能使用相应的称号。
 [/list][/b][/color][/size][/td][/tr]
