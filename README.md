@@ -8,7 +8,7 @@
 ##### [插件使用说明](https://github.com/geekfrog/NameTags/wiki/NameTags-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 
 ### 前置插件
-####FrogsPluginLib(宅宅蛙的插件前置库)
+#### FrogsPluginLib(宅宅蛙的插件前置库)
 下载地址:[https://ci.frog.gg/job/FrogsPluginLib/](https://ci.frog.gg/job/FrogsPluginLib/)
 
 ### 可选前置插件：
